@@ -20,12 +20,9 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "image",
-          },
+        type: "asset/resource",
+        generator: {
+          filename: "images/[hash][ext][query]",
         },
       },
     ],
